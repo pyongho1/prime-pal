@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<!-- <link rel="stylesheet" href="/stylesheets/movies/new.css" /> -->
+<%- include('../partials/nav') %>
+
+<div id="add-post-form">
+  <h1><%= title %></h1>
+  <form action="" method="POST">
+    <label>
+      Title:
+      <input type="text" name="title" />
+    </label>
+    <label>
+      POST:
+      <textarea name="content" cols="30" rows="10"></textarea>
+    </label>
+    <button type="submit">Publish Post</button>
+  </form>
+</div>
+
+<%- include("../partials/footer") %>

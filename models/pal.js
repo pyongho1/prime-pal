@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const palSchema = new Schema(
   {
-    name: String,
+    title: String,
     content: String,
     owner: { type: Schema.Types.ObjectId, ref: "Profile" },
   },

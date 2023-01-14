@@ -100,3 +100,17 @@ nav > a {
 .profile-avatar {
   margin-top: 50px;
 }
+
+#add-post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#add-post-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

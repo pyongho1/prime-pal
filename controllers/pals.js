@@ -14,4 +14,10 @@ function index(req, res) {
     });
 }
 
-export { index };
+function newPal(req, res) {
+  res.render("pals/new", {
+    title: "Add Post",
+  });
+}
+
+export { index, newPal as new };
