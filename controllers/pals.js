@@ -20,4 +20,15 @@ function newPal(req, res) {
   });
 }
 
-export { index, newPal as new };
+function create(req, res) {
+  Pal.create(req.body)
+    .then((pal) => {
+      res.redirect("/pals/new");
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/pals/new");
+    });
+}
+
+export { index, newPal as new, create };
