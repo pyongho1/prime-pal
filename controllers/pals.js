@@ -2,6 +2,7 @@ import { Pal } from "../models/pal.js";
 
 function index(req, res) {
   Pal.find({})
+    .sort({ createdAt: -1 })
     .then((pals) => {
       res.render("pals/index", {
         title: "Show Posts",

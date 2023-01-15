@@ -6,6 +6,7 @@ const palSchema = new Schema(
   {
     title: String,
     content: String,
+    date: Date,
     owner: { type: Schema.Types.ObjectId, ref: "Profile" },
   },
   {
