@@ -2,10 +2,10 @@ import { Pal } from "../models/pal.js";
 
 function index(req, res) {
   Pal.find({})
-    .then((pal) => {
+    .then((pals) => {
       res.render("pals/index", {
-        title: "Pal",
-        pal,
+        title: "Show Posts",
+        pals,
       });
     })
     .catch((err) => {
@@ -16,19 +16,34 @@ function index(req, res) {
 
 function newPal(req, res) {
   res.render("pals/new", {
-    title: "Add Post",
+    title: "Create Post",
   });
 }
 
 function create(req, res) {
   Pal.create(req.body)
     .then((pal) => {
-      res.redirect("/pals/new");
+      res.redirect("/pals");
     })
     .catch((err) => {
       console.log(err);
-      res.redirect("/pals/new");
+      res.redirect("/pals");
     });
 }
 
-export { index, newPal as new, create };
+function show(req, res) {
+  Pal.findById(req.params.id)
+    .populate("owner")
+    .then((pal) => {
+      res.render("pals/show", {
+        pal,
+        title: "Show Post",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/pals");
+    });
+}
+
+export { index, newPal as new, create, show };

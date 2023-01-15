@@ -1,7 +1,20 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel="stylesheet" href="/stylesheets/movies/new.css" /> -->
+<link rel="stylesheet" href="/stylesheets/style.css" />
 <%- include('../partials/nav') %>
 
-<h1>Posts...</h1>
+<div class="postcardContainer">
+  <% pals.forEach(pal => { %>
+  <div class="card text-center postCards">
+    <div class="card-header">Author</div>
+    <div class="card-body">
+      <h4 class="card-title"><%= pal.title %></h4>
+      <p class="card-text"><%= pal.content %></p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">DATE</div>
+  </div>
+
+  <% }) %>
+</div>
 
 <%- include("../partials/footer") %>
