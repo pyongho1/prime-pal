@@ -80,4 +80,29 @@ function edit(req, res) {
     });
 }
 
-export { index, newPal as new, create, show, deletePost as delete, edit };
+function update(req, res) {
+  Pal.findById(req.params.id)
+    .then((pal) => {
+      if (pal.owner.equals(req.user.profile._id)) {
+        pal.updateOne(req.body).then(() => {
+          res.redirect(`/pals/${pal._id}`);
+        });
+      } else {
+        throw new Error("Not authorized!");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/pals");
+    });
+}
+
+export {
+  index,
+  newPal as new,
+  create,
+  show,
+  deletePost as delete,
+  edit,
+  update,
+};

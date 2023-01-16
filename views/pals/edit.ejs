@@ -24,7 +24,7 @@
   </div>
   <% } %>
 
-  <form action="/pals" method="POST">
+  <form action="/pals/<%= pal._id %>?_method=PUT" method="POST">
     <div class="input-group mb-3">
       <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
       <input

@@ -16,4 +16,6 @@ router.post("/", isLoggedIn, palsCtrl.create);
 
 router.delete("/:id", isLoggedIn, palsCtrl.delete);
 
+router.put("/:id", isLoggedIn, palsCtrl.update);
+
 export { router };
