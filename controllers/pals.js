@@ -3,6 +3,7 @@ import { Pal } from "../models/pal.js";
 function index(req, res) {
   Pal.find({})
     .sort({ createdAt: -1 })
+    .populate("owner")
     .then((pals) => {
       res.render("pals/index", {
         title: "Show Posts",
@@ -33,18 +34,20 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  Pal.findById(req.params.id)
-    .populate("owner")
-    .then((pal) => {
-      res.render("pals/show", {
-        pal,
-        title: "Show Post",
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.redirect("/pals");
-    });
+  req.body.owner = req.user;
+  console.log(req.body.owner);
+  // Pal.findById(req.params.id)
+  //   .populate("owner")
+  //   .then((pal) => {
+  //     res.render("pals/show", {
+  //       pal,
+  //       title: "Show Post",
+  //     });
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.redirect("/pals");
+  //   });
 }
 
 export { index, newPal as new, create, show };
