@@ -23,6 +23,7 @@ function newPal(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user.profile._id;
   Pal.create(req.body)
     .then((pal) => {
       res.redirect("/pals");
@@ -34,20 +35,19 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  req.body.owner = req.user;
-  console.log(req.body.owner);
-  // Pal.findById(req.params.id)
-  //   .populate("owner")
-  //   .then((pal) => {
-  //     res.render("pals/show", {
-  //       pal,
-  //       title: "Show Post",
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.redirect("/pals");
-  //   });
+  Pal.findById(req.params.id)
+    .populate("owner")
+    .then((pal) => {
+      console.log(pal);
+      res.render("pals/show", {
+        pal,
+        title: "Show Post",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/pals");
+    });
 }
 
 export { index, newPal as new, create, show };
