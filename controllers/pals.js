@@ -38,7 +38,6 @@ function show(req, res) {
   Pal.findById(req.params.id)
     .populate("owner")
     .then((pal) => {
-      console.log(pal);
       res.render("pals/show", {
         pal,
         title: "Show Post",
@@ -50,4 +49,21 @@ function show(req, res) {
     });
 }
 
-export { index, newPal as new, create, show };
+function deletePost(req, res) {
+  Pal.findById(req.params.id)
+    .then((pal) => {
+      if (pal.owner.equals(req.user.profile._id)) {
+        pal.delete().then(() => {
+          res.redirect("/pals");
+        });
+      } else {
+        throw new Error("Not authorized");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/pals");
+    });
+}
+
+export { index, newPal as new, create, show, deletePost as delete };
