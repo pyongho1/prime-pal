@@ -66,4 +66,18 @@ function deletePost(req, res) {
     });
 }
 
-export { index, newPal as new, create, show, deletePost as delete };
+function edit(req, res) {
+  Pal.findById(req.params.id)
+    .then((pal) => {
+      res.render("pals/edit", {
+        pal,
+        title: "Edit Post",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/pals");
+    });
+}
+
+export { index, newPal as new, create, show, deletePost as delete, edit };

@@ -4,11 +4,15 @@
   <h1><%= title %></h1>
   <p>Title: <%= pal.title %></p>
   <p>Author: <%= pal.owner.name %></p>
+  <p>content: <%= pal.content %></p>
 
-  <% if (pal.owner.equals(user?.profile._id)) { %>
-  <a href="#">
+  <% if (pal.owner.equals(user?.profile._id)) { %> <% if
+  (pal.owner.equals(user?.profile._id)) { %>
+  <a href="/pals/<%= pal._id %>/edit">
     <button>Edit</button>
   </a>
+
+  <% } %>
   <form action="/pals/<%= pal._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete this post</button>
   </form>
