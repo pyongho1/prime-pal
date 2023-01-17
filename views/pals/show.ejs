@@ -22,21 +22,36 @@
     <hr />
     <p class="palContent">Content: <%= pal.content %></p>
 
-    <% if(pal.owner.equals(user?.profile._id)) { %>
-    <a href="/pals/<%= pal._id %>/edit">
-      <button>Edit</button>
-    </a>
+    <div class="editDeleteBtn">
+      <% if(pal.owner.equals(user?.profile._id)) { %>
+      <a href="/pals/<%= pal._id %>/edit">
+        <button>Edit</button>
+      </a>
 
-    <form action="/pals/<%= pal._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete this post</button>
-    </form>
-    <% } %>
+      <form action="/pals/<%= pal._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+      <% } %>
+    </div>
   </div>
-  <ul>
-    <% pal.comments?.forEach(comment => { %>
-    <li><%= comment.content %> - <%= comment.commenter.name %></li>
-    <% }) %>
-  </ul>
+  <div class="showComments">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name:</th>
+          <th scope="col">Comments:</th>
+        </tr>
+      </thead>
+      <% pal.comments?.forEach(comment => { %>
+      <tbody>
+        <tr>
+          <td><%= comment.commenter.name %></td>
+          <td><%= comment.content %></td>
+        </tr>
+      </tbody>
+      <% }) %>
+    </table>
+  </div>
   <% if (user) { %>
   <div class="commentContainer">
     <h3>Add a comment</h3>

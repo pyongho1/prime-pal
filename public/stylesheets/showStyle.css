@@ -29,6 +29,7 @@
 
 .palContent {
   padding-bottom: 50px;
+  width: 70%;
 }
 
 hr {
@@ -40,4 +41,28 @@ hr {
 
 .commentContainer {
   padding-top: 50px;
+}
+
+.showComments {
+  padding-top: 50px;
+}
+
+.showComments li {
+  list-style-type: none;
+}
+
+.editDeleteBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.editDeleteBtn button {
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #70798c;
+  color: white;
 }
