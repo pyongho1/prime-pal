@@ -1,0 +1,34 @@
+.container {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.subContainer {
+  display: flex;
+  justify-content: center;
+  /* background-color: gray; */
+  height: 600px;
+  width: auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexBtn {
+  height: 50px;
+  width: 400px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #dad2bc;
+  font-size: large;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}

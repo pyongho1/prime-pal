@@ -10,23 +10,37 @@
   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
   crossorigin="anonymous"
 ></script>
-<link rel="stylesheet" href="/stylesheets/style.css" />
+<link rel="stylesheet" href="/stylesheets/mainIndexStyle.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap"
+  rel="stylesheet"
+/>
 <%- include('./partials/nav') %>
 
-<main class="d-grid gap-2 col-6 mx-auto">
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-  <div>
-    <img
-      src="<%= user.profile.avatar %>"
-      alt="<%= user.profile.name %> avatar"
-    />
+<div class="container">
+  <div class="subContainer">
+    <div class="main">
+      <h1>Howdy, <%= user ? user.profile.name : "friend" %></h1>
+      <% if (user?.profile.avatar) { %>
+      <div>
+        <img
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+        />
+      </div>
+      <% } %>
+      <div class="btnContainer">
+        <a href="/pals">
+          <button class="indexBtn" type="button">See my friend's post</button>
+        </a>
+        <a href="#">
+          <button class="indexBtn" type="button">Who's down to hang?</button>
+        </a>
+      </div>
+    </div>
   </div>
-  <% } %>
-  <div class="d-grid gap-2 col-6 mx-auto">
-    <button class="btn btn-primary btn-lg" type="button">Button</button>
-    <button class="btn btn-primary btn-lg" type="button">Button</button>
-  </div>
-</main>
+</div>
 
 <%- include('./partials/footer') %>

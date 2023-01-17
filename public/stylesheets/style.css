@@ -17,7 +17,25 @@ body {
 }
 
 .navbar {
-  background-color: #70798c;
+  background-color: #252323;
+}
+
+.navbar i {
+  color: #f5f1ed;
+  padding-left: 10px;
+}
+
+.nav-link {
+  color: #f5f1ed;
+}
+.navbar-toggler {
+  background-color: #f5f1ed;
+  outline: none;
+}
+
+.card-header,
+.card-footer {
+  background-color: #dad2bc;
 }
 
 .profile-avatar {
