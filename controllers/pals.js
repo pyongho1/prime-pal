@@ -118,6 +118,26 @@ function addComment(req, res) {
     });
 }
 
+function editComment(req, res) {
+  Pal.findById(req.params.palId)
+    .then((pal) => {
+      const comment = pal.comments.id(req.params.commentId);
+      if (comment.commenter.equals(req.user.profile._id)) {
+        res.render("pals/editComment", {
+          pal,
+          comment,
+          title: "Update Comment",
+        });
+      } else {
+        throw new Error("Not Authorized");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/pals");
+    });
+}
+
 export {
   index,
   newPal as new,
@@ -127,4 +147,5 @@ export {
   edit,
   update,
   addComment,
+  editComment,
 };

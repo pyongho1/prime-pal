@@ -47,6 +47,13 @@
         <tr>
           <td><%= comment.commenter.name %></td>
           <td><%= comment.content %></td>
+          <% if (comment.commenter.equals(user?.profile._id)) { %>
+          <td>
+            <a href="/pals/<%= pal._id %>/comments/<%= comment._id %>/edit">
+              <button>Edit</button>
+            </a>
+          </td>
+          <% } %>
         </tr>
       </tbody>
       <% }) %>
