@@ -36,7 +36,7 @@ function create(req, res) {
 
 function show(req, res) {
   Pal.findById(req.params.id)
-    .populate("owner")
+    .populate([{ path: "owner" }, { path: "comments.commenter" }])
     .then((pal) => {
       res.render("pals/show", {
         pal,

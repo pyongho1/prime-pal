@@ -32,6 +32,11 @@
     </form>
     <% } %>
   </div>
+  <ul>
+    <% pal.comments?.forEach(comment => { %>
+    <li><%= comment.content %> - <%= comment.commenter.name %></li>
+    <% }) %>
+  </ul>
   <% if (user) { %>
   <div class="commentContainer">
     <h3>Add a comment</h3>
