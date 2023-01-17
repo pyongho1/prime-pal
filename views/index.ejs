@@ -22,7 +22,8 @@
 <div class="container">
   <div class="subContainer">
     <div class="main">
-      <h1>Howdy, <%= user ? user.profile.name : "friend" %></h1>
+      <h1>Howdy,</h1>
+      <h1><%= user ? user.profile.name : "friend" %></h1>
       <% if (user?.profile.avatar) { %>
       <div>
         <img
@@ -33,10 +34,16 @@
       <% } %>
       <div class="btnContainer">
         <a href="/pals">
-          <button class="indexBtn" type="button">See my friend's post</button>
+          <button class="indexBtn" type="button">
+            <i class="fa fa-comment"></i>
+            See my friend's post
+          </button>
         </a>
         <a href="#">
-          <button class="indexBtn" type="button">Who's down to hang?</button>
+          <button class="indexBtn" type="button">
+            <i class="fa fa-calendar"></i>
+            Who's down to hang?
+          </button>
         </a>
       </div>
     </div>
