@@ -73,3 +73,33 @@ body {
   justify-content: center;
   width: 100%;
 }
+
+.postButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.postButtons a {
+  margin-right: 10px;
+}
+
+.postButtons button {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 10px 20px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
+  background: transparent;
+  color: #000000;
+  box-shadow: 0 0 0 3px #000000 inset;
+}
+
+.postButtons button:hover {
+  transform: translateY(-2px);
+}

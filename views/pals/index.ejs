@@ -12,11 +12,19 @@
     <div class="card-body">
       <h4 class="card-title"><%= pal.title %></h4>
       <p class="card-text"><%= pal.content %></p>
-      <a href="/pals/<%= pal._id %>">Comment</a>
-      <% if(pal.owner.equals(user?.profile._id)) { %>
-      <a href="#">Edit</a>
-      <a href="#">Delete</a>
-      <% } %>
+      <div class="postButtons">
+        <a href="/pals/<%= pal._id %>">
+          <button>Comment</button>
+        </a>
+        <% if(pal.owner.equals(user?.profile._id)) { %>
+        <a href="/pals/<%= pal._id %>/edit">
+          <button>Edit</button>
+        </a>
+        <form action="/pals/<%= pal._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+        <% } %>
+      </div>
     </div>
     <div class="card-footer text-muted">
       <%= pal.createdAt.toLocaleString() %>
