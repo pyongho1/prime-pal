@@ -24,6 +24,12 @@ router.post("/:id/comments", isLoggedIn, palsCtrl.addComment);
 
 router.delete("/:id", isLoggedIn, palsCtrl.delete);
 
+router.delete(
+  "/:palId/comments/:commentId",
+  isLoggedIn,
+  palsCtrl.deleteComment
+);
+
 router.put("/:id", isLoggedIn, palsCtrl.update);
 
 router.put("/:palId/comments/:commentId", isLoggedIn, palsCtrl.updateComment);

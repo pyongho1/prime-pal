@@ -53,6 +53,14 @@
               <button>Edit</button>
             </a>
           </td>
+          <td>
+            <form
+              action="/pals/<%= pal._id %>/comments/<%= comment._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit">Delete</button>
+            </form>
+          </td>
           <% } %>
         </tr>
       </tbody>
