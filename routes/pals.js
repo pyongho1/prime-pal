@@ -26,4 +26,6 @@ router.delete("/:id", isLoggedIn, palsCtrl.delete);
 
 router.put("/:id", isLoggedIn, palsCtrl.update);
 
+router.put("/:palId/comments/:commentId", isLoggedIn, palsCtrl.updateComment);
+
 export { router };

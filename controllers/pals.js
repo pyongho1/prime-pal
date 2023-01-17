@@ -138,6 +138,31 @@ function editComment(req, res) {
     });
 }
 
+function updateComment(req, res) {
+  Pal.findById(req.params.palId)
+    .then((pal) => {
+      const comment = pal.comments.id(req.params.commentId);
+      if (comment.commenter.equals(req.user.profile._id)) {
+        comment.set(req.body);
+        pal
+          .save()
+          .then(() => {
+            res.redirect(`/pals/${pal._id}`);
+          })
+          .catch((err) => {
+            console.log(err);
+            res.redirect("/pals");
+          });
+      } else {
+        throw new Error("Not Authorized");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/pals");
+    });
+}
+
 export {
   index,
   newPal as new,
@@ -148,4 +173,5 @@ export {
   update,
   addComment,
   editComment,
+  updateComment,
 };
