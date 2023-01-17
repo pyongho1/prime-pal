@@ -1,0 +1,37 @@
+.container {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #a99985;
+  border-radius: 5px;
+  width: 600px;
+  background-color: #dad2bc;
+}
+
+.mainContainer h1 {
+  padding-top: 50px;
+}
+
+.palTitle {
+  font-size: 25px;
+  font-weight: 500;
+  padding-top: 50px;
+}
+
+.palContent {
+  padding-bottom: 50px;
+}
+
+hr {
+  width: 70%;
+  height: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
