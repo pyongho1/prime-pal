@@ -8,7 +8,7 @@
   <a href="/pals/new">Create Post</a>
   <% } %> <% pals.forEach(pal => { %>
   <div class="card text-center postCards">
-    <div class="card-header">author: <%= pal.owner.name %></div>
+    <div class="card-header">Author: <%= pal.owner.name %></div>
     <div class="card-body">
       <h4 class="card-title"><%= pal.title %></h4>
       <p class="card-text"><%= pal.content %></p>
@@ -16,7 +16,7 @@
       <a href="/pals/<%= pal._id %>">See more</a>
     </div>
     <div class="card-footer text-muted">
-      <%= pal.createdAt.toLocaleDateString() %>
+      <%= pal.createdAt.toLocaleString() %>
     </div>
   </div>
 
