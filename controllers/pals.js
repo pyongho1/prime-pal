@@ -97,6 +97,27 @@ function update(req, res) {
     });
 }
 
+function addComment(req, res) {
+  Pal.findById(req.params.id)
+    .then((pal) => {
+      req.body.commenter = req.user.profile._id;
+      pal.comments.push(req.body);
+      pal
+        .save()
+        .then(() => {
+          res.redirect(`/pals/${pal._id}`);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.redirect("/pals");
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/pals");
+    });
+}
+
 export {
   index,
   newPal as new,
@@ -105,4 +126,5 @@ export {
   deletePost as delete,
   edit,
   update,
+  addComment,
 };

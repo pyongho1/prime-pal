@@ -1,8 +1,10 @@
 .container {
   font-family: "Ubuntu", sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 50px;
+  align-items: center;
 }
 
 .mainContainer {
@@ -34,4 +36,8 @@ hr {
   height: 10px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.commentContainer {
+  padding-top: 50px;
 }

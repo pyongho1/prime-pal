@@ -22,18 +22,25 @@
     <hr />
     <p class="palContent">Content: <%= pal.content %></p>
 
-    <% if (pal.owner.equals(user?.profile._id)) { %> <% if
-    (pal.owner.equals(user?.profile._id)) { %>
+    <% if(pal.owner.equals(user?.profile._id)) { %>
     <a href="/pals/<%= pal._id %>/edit">
       <button>Edit</button>
     </a>
 
-    <% } %>
     <form action="/pals/<%= pal._id %>?_method=DELETE" method="POST">
       <button type="submit">Delete this post</button>
     </form>
     <% } %>
   </div>
+  <% if (user) { %>
+  <div class="commentContainer">
+    <h3>Add a comment</h3>
+    <form action="/pals/<%= pal._id %>/comments" method="POST">
+      <textarea name="content"></textarea><br />
+      <button>Add comment</button>
+    </form>
+  </div>
+  <% } %>
 </div>
 
 <%- include("../partials/footer") %>

@@ -13,6 +13,7 @@ const palSchema = new Schema(
     content: String,
     date: Date,
     owner: { type: Schema.Types.ObjectId, ref: "Profile" },
+    comments: [commentSchema],
   },
   {
     timestamps: true,
