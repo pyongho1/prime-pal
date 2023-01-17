@@ -1,0 +1,38 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainContainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainContainer form button {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: #252323;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px 20px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.mainContainer form button:hover {
+  transform: translateY(-2px);
+}
