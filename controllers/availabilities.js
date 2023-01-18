@@ -31,4 +31,21 @@ function create(req, res) {
     });
 }
 
-export { index, create };
+function deleteAvail(req, res) {
+  Availabilty.findById(req.params.id)
+    .then((avail) => {
+      if (avail.owner.equals(req.user.profile._id)) {
+        avail.delete().then(() => {
+          res.redirect("/availabilities");
+        });
+      } else {
+        throw new Error("Not Authorized");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/");
+    });
+}
+
+export { index, create, deleteAvail as delete };

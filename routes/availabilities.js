@@ -8,4 +8,6 @@ router.get("/", availabilitiesCtrl.index);
 
 router.post("/", availabilitiesCtrl.create);
 
+router.delete('/:id', isLoggedIn, availabilitiesCtrl.delete)
+
 export { router };

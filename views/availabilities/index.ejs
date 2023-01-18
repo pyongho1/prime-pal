@@ -56,6 +56,15 @@
         </li>
       </ul>
     </div>
+    <div class="editDelete">
+      <a href="#">Edit</a>
+      <form
+        action="/availabilities/<%= avails._id %>?_method=DELETE"
+        method="POST"
+      >
+        <button>Delete</button>
+      </form>
+    </div>
   </div>
 
   <% } %> <% }) %>
