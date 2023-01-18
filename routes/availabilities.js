@@ -4,6 +4,8 @@ import * as availabilitiesCtrl from "../controllers/availabilities.js";
 
 const router = Router();
 
-router.get("/", isLoggedIn, availabilitiesCtrl.index);
+router.get("/", availabilitiesCtrl.index);
+
+router.post("/", availabilitiesCtrl.create);
 
 export { router };

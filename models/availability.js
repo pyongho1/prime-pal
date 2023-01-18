@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 const availSchema = new Schema(
   {
-    availabiltiy: Boolean,
-    date: Date,
+    availability: Boolean,
+    availDate: Date,
     owner: { type: Schema.Types.ObjectId, ref: "Profile" },
   },
   {
