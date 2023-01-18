@@ -5,7 +5,7 @@ function index(req, res) {
     .then((avail) => {
       res.render("availabilities/index", {
         avail,
-        title: "Availabilty",
+        title: "Availability",
       });
     })
     .catch((err) => {
