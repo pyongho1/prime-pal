@@ -48,4 +48,36 @@ function deleteAvail(req, res) {
     });
 }
 
-export { index, create, deleteAvail as delete };
+function edit(req, res) {
+  Availabilty.findById(req.params.id)
+    .then((avail) => {
+      res.render("availabilities/edit", {
+        avail,
+        title: "Edit availability",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/");
+    });
+}
+
+function update(req, res) {
+  Availabilty.findById(req.params.id)
+    .then((avail) => {
+      if (avail.owner.equals(req.user.profile._id)) {
+        req.body.availability = !!req.body.availability;
+        avail.updateOne(req.body).then(() => {
+          res.redirect(`/availabilities/${avail._id}`);
+        });
+      } else {
+        throw new Error("Not authorized");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/");
+    });
+}
+
+export { index, create, deleteAvail as delete, edit, update };

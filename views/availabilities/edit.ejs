@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %> <%- include('../partials/nav') %>
+<h1><%= title %></h1>
+<form action="/availabilities/<%= avail._id %>?_method=PUT" method="POST">
+  <label>
+    What should we do?
+    <input type="text" name="title" value="<%= avail.title %>" />
+  </label>
+  <label>
+    Date and Time
+    <input
+      type="datetime-local"
+      name="availDate"
+      value="<%= avail.availDate %>"
+    />
+  </label>
+  <label>
+    Available? <input type="checkbox" name="availability" <%= avail.availability
+    ? 'checked' : '' %> />
+  </label>
+  <button type="submit">Add Time</button>
+</form>
+<%- include('../partials/footer') %>

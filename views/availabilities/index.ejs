@@ -56,8 +56,10 @@
         </li>
       </ul>
     </div>
+
+    <% if (avails.owner.equals(user?.profile._id)) { %>
     <div class="editDelete">
-      <a href="#">Edit</a>
+      <a href="/availabilities/<%= avails._id %>/edit">Edit</a>
       <form
         action="/availabilities/<%= avails._id %>?_method=DELETE"
         method="POST"
@@ -65,6 +67,7 @@
         <button>Delete</button>
       </form>
     </div>
+    <% } %>
   </div>
 
   <% } %> <% }) %>

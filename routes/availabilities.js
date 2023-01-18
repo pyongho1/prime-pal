@@ -6,8 +6,12 @@ const router = Router();
 
 router.get("/", availabilitiesCtrl.index);
 
+router.get("/:id/edit", isLoggedIn, availabilitiesCtrl.edit);
+
 router.post("/", availabilitiesCtrl.create);
 
-router.delete('/:id', isLoggedIn, availabilitiesCtrl.delete)
+router.put("/:id", isLoggedIn, availabilitiesCtrl.update);
+
+router.delete("/:id", isLoggedIn, availabilitiesCtrl.delete);
 
 export { router };
