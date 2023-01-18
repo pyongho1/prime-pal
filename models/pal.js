@@ -12,6 +12,7 @@ const palSchema = new Schema(
     title: String,
     content: String,
     date: Date,
+    availabiltiy: Boolean,
     owner: { type: Schema.Types.ObjectId, ref: "Profile" },
     comments: [commentSchema],
   },
