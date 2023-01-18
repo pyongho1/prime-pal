@@ -18,7 +18,7 @@ function create(req, res) {
   req.body.owner = req.user.profile._id;
   req.body.availability = !!req.body.availability;
   if (req.body.availDate === "") delete req.body.availDate;
-  if (req.body.availability === ) delete req.body.availability;
+  if (req.body.availability === "") delete req.body.availability;
   Availabilty.create(req.body)
     .then((avail) => {
       res.redirect("/availabilities");

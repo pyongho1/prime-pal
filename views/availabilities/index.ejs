@@ -2,26 +2,36 @@
 <link rel="stylesheet" href="/stylesheets/profiles/index.css" />
 <%- include('../partials/nav') %>
 
-<div>
+<div class="container">
   <h1><%= title %></h1>
 
-  <% if (user) { %>
-  <h2>Add a time</h2>
-  <form action="/availabilities" method="POST">
-    <label>
-      <input type="datetime-local" name="availDate" />
-    </label>
-    <label>
-      Available?
-      <input type="checkbox" name="availability" />
-    </label>
-    <button type="submit">Add Time</button>
-  </form>
-  <% } %> <% avail.forEach(avails => { %> <% if (avails.availDate ||
+  <div class="formContainer">
+    <% if (user) { %>
+    <h2>Add a time</h2>
+    <form action="/availabilities" method="POST">
+      <label>
+        What should we do?
+        <input type="text" name="title" />
+      </label>
+      <label>
+        <input type="datetime-local" name="availDate" />
+      </label>
+      <label>
+        Available?
+        <input type="checkbox" name="availability" />
+      </label>
+      <button type="submit">Add Time</button>
+    </form>
+    <% } %>
+  </div>
+
+  <% avail.forEach(avails => { %> <% if (avails.availDate ||
   avails.availability) { %>
 
-  <p><%= avails.availDate %></p>
+  <p><%= avails.title %></p>
+  <p><%= avails.availDate.toLocaleString() %></p>
   <p><%= avails.availability ? 'Nice' : 'Aw' %></p>
+
   <% } %> <% }) %>
 </div>
 
