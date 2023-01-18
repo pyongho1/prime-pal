@@ -1,7 +1,9 @@
 import { Availabilty } from "../models/availability.js";
 
 function index(req, res) {
+  // req.body.owner = req.user.profile._id;
   Availabilty.find({})
+    .populate("owner")
     .then((avail) => {
       res.render("availabilities/index", {
         avail,

@@ -40,11 +40,23 @@
   <% avail.forEach(avails => { %> <% if (avails.availDate ||
   avails.availability) { %>
 
-  <ul class="list-group availGroup">
-    <li class="list-group-item"><%= avails.title %></li>
-    <li class="list-group-item"><%= avails.availDate.toLocaleString() %></li>
-    <li class="list-group-item"><%= avails.availability ? 'Nice' : 'Aw' %></li>
-  </ul>
+  <div class="displayInfo">
+    <div class="nameAvatar">
+      <img src="<%= avails.owner.avatar %>" alt="test" />
+      <h5><%= avails.owner.name %></h5>
+    </div>
+    <div class="info">
+      <ul class="list-group availGroup">
+        <li class="list-group-item"><%= avails.title %></li>
+        <li class="list-group-item">
+          <%= avails.availDate.toLocaleString() %>
+        </li>
+        <li class="list-group-item">
+          <%= avails.availability ? 'Nice' : 'Aw' %>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <% } %> <% }) %>
 </div>
