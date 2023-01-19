@@ -41,25 +41,29 @@
   avails.availability) { %>
 
   <div class="displayInfo">
-    <div class="nameAvatar">
-      <img src="<%= avails.owner.avatar %>" alt="test" />
-      <h5><%= avails.owner.name %></h5>
-    </div>
-    <div class="info">
-      <ul class="list-group availGroup">
-        <li class="list-group-item"><%= avails.title %></li>
-        <li class="list-group-item">
-          <%= avails.availDate.toLocaleString() %>
-        </li>
-        <li class="list-group-item">
-          <%= avails.availability ? 'Nice' : 'Aw' %>
-        </li>
-      </ul>
+    <div class="firstContainer">
+      <div class="nameAvatar">
+        <img src="<%= avails.owner.avatar %>" alt="test" />
+        <h5><%= avails.owner.name %></h5>
+      </div>
+      <div class="info">
+        <ul class="list-group availGroup">
+          <li class="list-group-item"><%= avails.title %></li>
+          <li class="list-group-item">
+            <%= avails.availDate.toLocaleString() %>
+          </li>
+          <li class="list-group-item">
+            <%= avails.availability ? 'Nice' : 'Aw' %>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <% if (avails.owner.equals(user?.profile._id)) { %>
     <div class="editDelete">
-      <a href="/availabilities/<%= avails._id %>/edit">Edit</a>
+      <a href="/availabilities/<%= avails._id %>/edit">
+        <button>Edit</button>
+      </a>
       <form
         action="/availabilities/<%= avails._id %>?_method=DELETE"
         method="POST"

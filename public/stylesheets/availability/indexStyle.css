@@ -2,12 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 .formContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
+  border: 1px solid;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: #70798c;
+  color: white;
 }
 
 .formContainer form {
@@ -21,9 +28,34 @@
   margin-bottom: 20px;
 }
 
+.formContainer button {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 10px 20px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
+  background: transparent;
+  color: #f5f1ed;
+  box-shadow: 0 0 0 3px #f5f1ed inset;
+}
+
+.formContainer button:hover {
+  transform: translateY(-2px);
+}
+
 .displayInfo {
   display: flex;
-  margin-top: 20px;
+  margin-top: 50px;
+  flex-direction: column;
+}
+
+.firstContainer {
+  display: flex;
 }
 
 .nameAvatar {
@@ -37,10 +69,38 @@
 .nameAvatar img {
   border-radius: 50%;
   margin-bottom: 20px;
+  height: 60px;
 }
 
 .info {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.editDelete {
+  display: flex;
+  justify-content: center;
+}
+
+.editDelete button {
+  margin-left: 20px;
+  margin-top: 20px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 10px 20px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
+  background: transparent;
+  color: #000000;
+  box-shadow: 0 0 0 3px #000000 inset;
+}
+
+.editDelete button:hover {
+  transform: translateY(-2px);
 }
