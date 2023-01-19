@@ -16,8 +16,8 @@
 <div class="container">
   <h1><%= title %></h1>
 
+  <% if (user) { %>
   <div class="formContainer">
-    <% if (user) { %>
     <h2>Add a time</h2>
     <form action="/availabilities" method="POST">
       <label>
@@ -34,10 +34,8 @@
       </label>
       <button type="submit">Add Time</button>
     </form>
-    <% } %>
   </div>
-
-  <% avail.forEach(avails => { %> <% if (avails.availDate ||
+  <% } %> <% avail.forEach(avails => { %> <% if (avails.availDate ||
   avails.availability) { %>
 
   <div class="displayInfo">
