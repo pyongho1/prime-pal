@@ -1,8 +1,8 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/profiles/index.css" />
 <%- include('../partials/nav') %>
-<h1><%= title %></h1>
 <main>
+  <h1><%= title %></h1>
   <div class="card-container">
     <% profiles.forEach(profile => { %>
     <a class="text-decoration-none" href="/profiles/<%= profile._id %>">

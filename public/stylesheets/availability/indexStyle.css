@@ -81,6 +81,7 @@
 .editDelete {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .editDelete button {
@@ -103,4 +104,11 @@
 
 .editDelete button:hover {
   transform: translateY(-2px);
+}
+
+hr {
+  width: 30%;
+  height: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
