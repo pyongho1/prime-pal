@@ -7,11 +7,12 @@ A social networking platform designed for close friends to communicate and conne
 ## Getting Started
 
 🖥️ To have access to the web-app, [Click Here](https://primepal.fly.dev/).
+
 🗒️ To have access to planning material, [Trello](https://trello.com/b/6WIldvR9/unit-2-project).
 
 #
 
 ## Web-Application Screenshots
 
-<img src="/index.png" alt="Index Picture">
-<img src="/post.png" alt="Index Picture">
+<img src="/public/index.png" alt="Index Picture">
+<img src="/public/post.png" alt="Post Picture">
