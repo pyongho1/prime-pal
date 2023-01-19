@@ -68,7 +68,7 @@ function update(req, res) {
       if (avail.owner.equals(req.user.profile._id)) {
         req.body.availability = !!req.body.availability;
         avail.updateOne(req.body).then(() => {
-          res.redirect(`/availabilities/${avail._id}`);
+          res.redirect(`/availabilities/`);
         });
       } else {
         throw new Error("Not authorized");
