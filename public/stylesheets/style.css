@@ -39,6 +39,7 @@ body {
 
 .navbar {
   background-color: #252323;
+  height: 90px;
 }
 
 .navbar i {
@@ -52,6 +53,14 @@ body {
 .navbar-toggler {
   background-color: #f5f1ed;
   outline: none;
+}
+
+.logo-left {
+  margin-left: 20px;
+}
+
+.logo-left img {
+  height: 70px;
 }
 
 .card-header,
@@ -131,4 +140,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.loginButton {
+  margin-right: 20px;
+}
+
+.loginButton i:hover {
+  color: rgb(210, 62, 62);
 }

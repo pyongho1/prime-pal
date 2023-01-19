@@ -30,6 +30,8 @@
 .palContent {
   padding-bottom: 50px;
   width: 70%;
+  display: flex;
+  justify-content: center;
 }
 
 hr {
