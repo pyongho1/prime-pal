@@ -5,7 +5,7 @@
 <div class="postcardContainer">
   <h1><%= title %></h1>
   <% if (user) { %>
-  <a href="/pals/new">Create Post</a>
+  <a href="/pals/new" class="createPost">Create Post</a>
   <% } %> <% pals.forEach(pal => { %>
   <div class="card text-center postCards">
     <div class="card-header">Author: <%= pal.owner.name %></div>
