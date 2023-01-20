@@ -32,7 +32,11 @@ A social networking platform designed for close friends to communicate and conne
 
 ## Next Steps [Ice Box] 🧊
 
-- [ ]
+- [ ] Add friend request.
+- [ ] Add thumbs up/down for each post.
+- [ ] Add a tally section for availability so that user can know who can hang out.
+- [ ] Make it mobile-friendly
+- [ ] (Optional) Implement unique apis
 
 #
 
